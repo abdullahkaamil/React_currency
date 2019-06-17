@@ -52,7 +52,7 @@ class list extends React.Component {
         const { loading, error, currencies } = this.state;
 
         if (loading) {
-            return <div clasName="loading-container"><Loading /></div>
+            return <div className="loading-container"><Loading /></div>
         }
 
         if (error) {
