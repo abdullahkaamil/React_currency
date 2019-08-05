@@ -4,6 +4,8 @@ import { API_URL } from '../../config';
 import Loading from '../common/Loading';
 import './Table.css';
 import Table from './Table';
+import Pagination from './pagination';
+
 class list extends React.Component {
     constructor() {
         super();
@@ -11,13 +13,16 @@ class list extends React.Component {
             loading: false,
             currencies: [],
             error: null,
+            totalPages: 0,
+            page: 1,
         };
     }
 
     componentDidMount() {
         this.setState({ loading: true });
+        const {page} = this.state;  
 
-        fetch(`${API_URL}/cryptocurrencies?page=1&perPage=20`)
+        fetch(`${API_URL}/cryptocurrencies?page=${page}&perPage=20`)
             .then(handleResponse)
             .then((data) => {
                 this.setState({
