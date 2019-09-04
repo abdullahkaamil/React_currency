@@ -7,7 +7,7 @@ import './index.css';
 
 
 const App = () => {
-    const title = "React Coin";
+    // const title = "React Coin";
     return (
         <div>
             <Header />

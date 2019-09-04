@@ -37,8 +37,9 @@ const Table = (props) => {
 
 
 // testing proptypes
-Table. propTypes = {
+Table.propTypes = {
     currencies: PropTypes.array,
+    renderChangePercent : PropTypes.func.isRequired,
 };
 
 export default Table;
